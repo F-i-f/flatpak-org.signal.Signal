@@ -15,6 +15,8 @@ finish-args:
   - --socket=wayland
   # Audio Access
   - --socket=pulseaudio
+  # Access to all files
+  - --filesystem=host
   # All devices (camera, microphone for calls)
   - --device=all
   # Network Access
@@ -62,8 +64,8 @@ modules:
     sources:
       - type: file
         dest-filename: signal-desktop.deb
-        url: https://updates.signal.org/desktop/apt/pool/s/signal-desktop/signal-desktop_7.24.1_amd64.deb
-        sha256: 104464ca98fdd86a757154a8757c73894dda5ac18360f0fcdc1da7746d66411d
+        url: https://updates.signal.org/desktop/apt/pool/s/signal-desktop/signal-desktop_7.34.0_amd64.deb
+        sha256: c6d349a5a920cf577acd5773b15934984810fe37eb3a3c26708c8408901f6f19
         x-checker-data:
           type: debian-repo
           package-name: signal-desktop
