@@ -56,8 +56,10 @@ fi
 # Warn the user about plaintext password
 # - if the user chose basic (this is the default)
 # - and Signal starts for the first time
-if [[ -z "${SIGNAL_PASSWORD_STORE-}" && ! -f "${XDG_CONFIG_HOME}/Signal/config.json" ]]; then
-    show_encryption_warning
+if [[ -z "${SIGNAL_PASSWORD_STORE-}" ]]; then
+    if [[ ! -f "${XDG_CONFIG_HOME}/Signal/config.json" ]]; then
+        show_encryption_warning
+    fi
 fi
 
 declare -r SIGNAL_PASSWORD_STORE="${SIGNAL_PASSWORD_STORE:-basic}"
