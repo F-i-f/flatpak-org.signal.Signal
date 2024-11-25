@@ -1,7 +1,7 @@
 org.signal.Signal Flatpak manifest simplified
 ==============================================
 
-This is a fork of the [com.signal.Signal Flatpak manifest](https://github.com/flathub/com.signal.Signal).
+This is a fork of the [org.signal.Signal Flatpak manifest](https://github.com/flathub/org.signal.Signal).
 
 As packaged in flathub, Signal prompts the user:
 - to accept that the database is unencrypted,
