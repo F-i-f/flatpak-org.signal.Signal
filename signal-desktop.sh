@@ -79,7 +79,7 @@ esac
 
 # Explain filesystem=host upon the first run
 EXPLAIN_FILESYSTEM_HOST_FILE="${XDG_CACHE_HOME}/signal-user-accepted-filesystem-access"
-if [[ ! -f "${EXPLAIN_FILESYSTEM_HOST_FILE}" ]]; then
+if [[ ! -f "${EXPLAIN_FILESYSTEM_HOST_FILE}" && "${SIGNAL_HOST_FILESYSTEM_OK-}" != yes ]]; then
     if user_accepted_filesystem_access; then
         echo "Debug: User accepted filesystem=host explanation or already changed permissions."
         touch "${EXPLAIN_FILESYSTEM_HOST_FILE}"
