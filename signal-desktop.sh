@@ -77,6 +77,10 @@ basic | gnome-libsecret | kwallet | kwallet5 | kwallet6)
     ;;
 esac
 
+if [[ "${ELECTRON_OZONE_PLATFORM_HINT}" == "auto" || "${ELECTRON_OZONE_PLATFORM_HINT}" == "wayland" ]]; then
+    EXTRA_ARGS+=("--enable-wayland-ime" "--wayland-text-input-version=3")
+fi
+
 # Explain filesystem=host upon the first run
 EXPLAIN_FILESYSTEM_HOST_FILE="${XDG_CACHE_HOME}/signal-user-accepted-filesystem-access"
 if [[ ! -f "${EXPLAIN_FILESYSTEM_HOST_FILE}" && "${SIGNAL_HOST_FILESYSTEM_OK-}" != yes ]]; then
