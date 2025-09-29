@@ -88,4 +88,9 @@ echo "Debug: Will run signal with the following arguments:" "${EXTRA_ARGS[@]}"
 echo "Debug: Additionally, user gave: $*"
 
 export TMPDIR="${XDG_RUNTIME_DIR}/app/${FLATPAK_ID}"
+
+# Chromium leaks tmpfiles, cleanup any old ones
+find "${TMPDIR}" -name ".org.chromium.Chromium.*" -delete
+
+# Finally launch signal
 exec zypak-wrapper "/app/Signal/signal-desktop" "${EXTRA_ARGS[@]}" "$@"
