@@ -21,20 +21,18 @@ finish-args:
   - --share=network
   # We need to be able to inhibit sleep
   - --system-talk-name=org.freedesktop.login1
-  - --talk-name=org.gnome.SessionManager
   - --talk-name=org.freedesktop.PowerManagement
   - --talk-name=org.freedesktop.ScreenSaver
+  - --talk-name=org.gnome.SessionManager
   # Secrets storage
   - --talk-name=org.freedesktop.secrets
   # These are for notifications/tray icons
-  - --talk-name=org.gnome.Mutter.IdleMonitor
-  - --talk-name=org.kde.StatusNotifierWatcher
   - --talk-name=com.canonical.AppMenu.Registrar
+  - --talk-name=com.canonical.Unity
   - --talk-name=com.canonical.indicator.application
   - --talk-name=org.ayatana.indicator.application
-  # This is needed for the notification count badge in DEs that implement
-  # the Untiy protocol for this functionality (e.g. KDE)
-  - --talk-name=com.canonical.Unity
+  - --talk-name=org.gnome.Mutter.IdleMonitor
+  - --talk-name=org.kde.StatusNotifierWatcher
   # Environment Variables to control the behavior
   - --env=SIGNAL_DISABLE_GPU=0
   - --env=SIGNAL_DISABLE_GPU_SANDBOX=0
@@ -65,8 +63,8 @@ modules:
     sources:
       - type: file
         dest-filename: signal-desktop.deb
-        url: https://updates.signal.org/desktop/apt/pool/s/signal-desktop/signal-desktop_7.76.0_amd64.deb
-        sha256: ee8abcc9c2feee15393d729294dc3aa042e3e7a982d3a528001c3537dbc148ca
+        url: https://updates.signal.org/desktop/apt/pool/s/signal-desktop/signal-desktop_7.77.0_amd64.deb
+        sha256: c2d7632d9c8e46d0e3f40190d3f48224099e6d00801fb989277941447995eca0
         x-checker-data:
           type: debian-repo
           package-name: signal-desktop
