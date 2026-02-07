@@ -55,11 +55,6 @@ basic | gnome-libsecret | kwallet | kwallet5 | kwallet6)
     ;;
 esac
 
-# add wayland specific command line arguments
-if [[ ${XDG_SESSION_TYPE:-} == "wayland" ]]; then
-    EXTRA_ARGS+=("--enable-wayland-ime" "--wayland-text-input-version=3")
-fi
-
 # Remove deprecated file
 EXPLAIN_FILESYSTEM_HOST_FILE="${XDG_CACHE_HOME}/signal-user-accepted-filesystem-access"
 if [[ -f "${EXPLAIN_FILESYSTEM_HOST_FILE}" ]]; then
